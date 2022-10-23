@@ -1,31 +1,22 @@
 {
-	"name": "nodejs-server-template",
+	"name": "nodejs-request",
 	"version": "0.0.0",
 	"private": true,
-	"description": "Not-so-opinionated server template, with all the important stuff",
+	"description": "Sample Repository to test some NodeJS Request libs",
 	"keywords": [
 		"nodejs",
-		"template",
-		"nodejs-template",
-		"iamnapo",
 		"eslint",
 		"fastify",
-		"graphql",
 		"sentry",
 		"nodemon",
 		"ava",
 		"dotenv"
 	],
-	"homepage": "https://github.com/iamnapo/nodejs-server-template#readme",
-	"bugs": {
-		"url": "https://github.com/iamnapo/nodejs-server-template/issues"
-	},
-	"repository": "github:iamnapo/nodejs-server-template",
+	"repository": "github:pixeljonas/nodejs-request",
 	"license": "MIT",
 	"author": {
-		"name": "Napoleon-Christos Oikonomou",
-		"email": "Napoleonoikon@gmail.com",
-		"url": "https://iamnapo.me"
+		"name": "PixelJonas",
+		"email": "5434875+PixelJonas@users.noreply.github.com"
 	},
 	"type": "module",
 	"exports": "./server.js",
@@ -34,7 +25,8 @@
 		"dev": "nodemon server.js",
 		"lint": "eslint . --ext .js --cache",
 		"start": "cross-env NODE_ENV=production node server.js",
-		"test": "npm run lint && npm run ava"
+		"test": "npm run lint && npm run ava",
+		"ci": "npm i"
 	},
 	"nodemonConfig": {
 		"env": {
@@ -62,12 +54,15 @@
 		"@fastify/cors": "^8.1.0",
 		"@fastify/helmet": "^9.1.0",
 		"@sentry/node": "^7.11.1",
+		"axios": "^1.1.3",
 		"cross-env": "^7.0.3",
 		"dotenv": "^16.0.1",
 		"fastify": "^4.5.3",
 		"fastify-plugin": "^4.2.1",
 		"mercurius": "^10.3.0",
-		"pino-pretty": "^9.1.0"
+		"node-fetch": "^3.2.10",
+		"pino-pretty": "^9.1.0",
+		"request": "^2.88.2"
 	},
 	"devDependencies": {
 		"@iamnapo/prettier-config": "^1.0.3",
