@@ -1,0 +1,85 @@
+{
+	"name": "nodejs-server-template",
+	"version": "0.0.0",
+	"private": true,
+	"description": "Not-so-opinionated server template, with all the important stuff",
+	"keywords": [
+		"nodejs",
+		"template",
+		"nodejs-template",
+		"iamnapo",
+		"eslint",
+		"fastify",
+		"graphql",
+		"sentry",
+		"nodemon",
+		"ava",
+		"dotenv"
+	],
+	"homepage": "https://github.com/iamnapo/nodejs-server-template#readme",
+	"bugs": {
+		"url": "https://github.com/iamnapo/nodejs-server-template/issues"
+	},
+	"repository": "github:iamnapo/nodejs-server-template",
+	"license": "MIT",
+	"author": {
+		"name": "Napoleon-Christos Oikonomou",
+		"email": "Napoleonoikon@gmail.com",
+		"url": "https://iamnapo.me"
+	},
+	"type": "module",
+	"exports": "./server.js",
+	"scripts": {
+		"ava": "c8 ava",
+		"dev": "nodemon server.js",
+		"lint": "eslint . --ext .js --cache",
+		"start": "cross-env NODE_ENV=production node server.js",
+		"test": "npm run lint && npm run ava"
+	},
+	"nodemonConfig": {
+		"env": {
+			"NODE_ENV": "development",
+			"NODE_OPTIONS": "--trace-warnings"
+		},
+		"watch": [
+			"src",
+			"server.js"
+		]
+	},
+	"prettier": "@iamnapo/prettier-config",
+	"eslintConfig": {
+		"extends": "iamnapo",
+		"rules": {
+			"import/no-unresolved": "off"
+		}
+	},
+	"ava": {
+		"verbose": true
+	},
+	"dependencies": {
+		"@fastify/compress": "^6.1.1",
+		"@fastify/cookie": "^8.0.0",
+		"@fastify/cors": "^8.1.0",
+		"@fastify/helmet": "^9.1.0",
+		"@sentry/node": "^7.11.1",
+		"cross-env": "^7.0.3",
+		"dotenv": "^16.0.1",
+		"fastify": "^4.5.3",
+		"fastify-plugin": "^4.2.1",
+		"mercurius": "^10.3.0",
+		"pino-pretty": "^9.1.0"
+	},
+	"devDependencies": {
+		"@iamnapo/prettier-config": "^1.0.3",
+		"ava": "^4.3.3",
+		"c8": "^7.12.0",
+		"eslint": "^8.23.0",
+		"eslint-config-iamnapo": "^26.0.0",
+		"file-type": "^18.0.0",
+		"got": "^12.3.1",
+		"nodemon": "^2.0.19"
+	},
+	"engines": {
+		"node": ">=18"
+	}
+}
